@@ -1,0 +1,6288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1024</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>АРМ командира</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralWidget{
+	background-image: url(:/background/resgui/background/bronzeLibre2.png);
+}
+
+QFrame{   
+	border: 0px;
+}
+
+QFrame[accessibleDescription=&quot;F&quot;]{
+	border-radius: 7px;	
+   color: rgba(208, 192, 144, 255);
+	border: 1px solid rgba(248, 192, 144, 255);
+}
+
+QFrame[accessibleDescription=&quot;RadioGroup&quot;]{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.4 rgba(0,0,0,0),
+	stop:0.45 rgba(0,0,0,255),
+	stop:0.55 rgba(0,0,0,255),
+	stop:0.6 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+QPushButton, QRadioButton, QLabel, QDoubleSpinBox, QTabBar, QLineEdit,QTreeWidget{
+	color: rgba(192, 176, 128, 255);
+/*	color: white;*/
+}
+
+QPushButton:disabled, QRadioButton:disabled, QLabel:disabled, QDoubleSpinBox:disabled{
+	color: rgba(192, 176, 128, 64);	
+}
+
+QPushButton{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(104, 96, 88, 255), 
+	stop:0.3 rgba(48, 44, 32, 255) 
+	);
+
+	border-top: 1px solid rgb(176, 168, 144);
+	border-left: 1px solid rgb(160, 152, 128);	
+    border-right: 1px solid black;
+    border-bottom: 1px solid black; 
+}
+
+QPushButton:disabled{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(60, 56, 44, 255), 
+	stop:0.3 rgba(48, 44, 32, 255) 
+	);
+
+	border-width: 1px;
+   	border-left-color: rgb(144, 140, 120);
+	border-top-color: rgb(144, 140, 120);	
+    border-right-color: rgb(64, 56, 48);
+    border-bottom-color: rgb(64, 56, 48);
+}
+
+/*QPushButton:disabled{
+	border-width: 1px;
+   	border-left-color: rgb(144, 140, 120);
+	border-top-color: rgb(144, 140, 120);	
+    border-right-color: rgb(64, 56, 48);
+    border-bottom-color: rgb(64, 56, 48);
+
+	background-color: rgba(100, 80, 60, 255);
+
+	color:#8f8880; 
+	
+}
+*/
+
+QPushButton:checked, QPushButton:pressed{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+    border-right: 1px solid rgb(200, 190, 160);
+    border-bottom: 1px solid rgb(200, 190, 160);
+
+    padding-top: 1px;
+
+	border-right: 1px solid rgb(160, 152, 128);	
+	border-bottom: 1px solid rgb(160, 152, 128);
+}
+
+QPushButton[accessibleDescription=&quot;S&quot;]{
+	border-radius: 7px;	
+}
+
+QPushButton[accessibleDescription=&quot;LT&quot;]{
+	border-top-left-radius: 7px;
+}
+
+
+QPushButton[accessibleDescription=&quot;L&quot;]{
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding-right: 12px;
+	padding-left: 2px;  	
+}
+
+QPushButton[accessibleDescription=&quot;R&quot;]{
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	padding-right: 10px;
+	padding-left: 4px;
+}
+
+QPushButton[accessibleDescription=&quot;T&quot;], QPushButton[accessibleDescription=&quot;400&quot;]{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;	
+	border-bottom-color: rgb(48, 44, 32);
+}
+
+QPushButton[accessibleDescription=&quot;M&quot;]{
+	border-bottom-color: rgb(48, 44, 32);
+}
+
+QPushButton[accessibleDescription=&quot;B&quot;], QPushButton[accessibleDescription=&quot;Ext&quot;]{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+
+
+QPushButton:hover{  
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(136, 128, 120, 255), 
+	stop:0.3 rgba(60, 52, 48,  255), 
+	stop:0.8 rgba(60, 52, 48,  255), 
+	stop:1 rgba(136, 128, 120, 255));	
+
+	color: rgba(255, 240, 160, 255);
+}
+
+QGroupBox[accessibleDescription=&quot;G&quot;]{
+  border-radius: 7px;
+   margin-top: 16px;
+   color: rgba(208, 192, 144, 255);
+	border: 1px solid rgba(208, 192, 144, 255);
+
+/*   color: white;
+	border: 1px solid white;
+*/
+}
+
+QGroupBox::title[accessibleDescription=&quot;G&quot;] {
+    subcontrol-origin: margin;
+    subcontrol-position: top;
+    padding: 0 3px;
+    margin-top: 2px;    
+}
+
+QGroupBox:disabled[accessibleDescription=&quot;G&quot;]{
+	color: rgba(192, 176, 128, 96);
+	border: 1px solid rgba(192, 176, 128, 96);
+}
+
+
+QDoubleSpinBox{
+	border-radius: 4px;
+	border-top: 1px solid rgb(32, 28, 20);
+	border-left: 1px solid black; 
+   	border-right: 1px solid rgb(160, 152, 128);
+    border-bottom: 1px solid rgb(160, 152, 128);
+	background-color: rgba(0, 0, 0, 255);
+}
+
+QDoubleSpinBox:disabled{
+/*	background-color: rgba(68, 64, 60, 255);	*/
+	background-color: rgba(48, 44, 32, 255);
+
+}
+
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button{
+	height: 10px;	
+	border-left: 1px solid rgb(160, 152, 128);	
+	border-top: 1px solid rgb(160, 152, 128);
+
+    border-right: 1px solid black;
+    border-bottom: 1px solid black; 
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(128, 120, 112, 255), 
+	stop:0.3 rgba(48, 44, 32, 255));
+}
+
+QDoubleSpinBox::up-button::pressed, QDoubleSpinBox::down-button::pressed{
+	border-top: 1px solid black;
+	border-left: 1px solid black; 
+    border-right: 1px solid rgb(200, 190, 160);
+    border-bottom: 1px solid rgb(200, 190, 160);	
+}
+
+QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover{  
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(136, 128, 120, 255), 
+	stop:0.3 rgba(60, 52, 48,  255), 
+	stop:0.8 rgba(60, 52, 48,  255), 
+	stop:1 rgba(136, 128, 120, 255));		
+}
+
+QDoubleSpinBox::up-button{  
+   border-top-right-radius: 4px;
+	image: url(:/spinbox/resgui/spinbox/up55.png);	
+}
+
+QDoubleSpinBox::down-button{
+	border-bottom-right-radius: 4px;
+	image: url(:/spinbox/resgui/spinbox/dn55.png);
+}
+
+QRadioButton::indicator{ 
+width: 17px; 
+height: 17px; 
+}
+
+QRadioButton::indicator::checked::enabled{ 
+background-image: url(:/rb2/resgui/radioBtn2/radioOn.png);
+}
+
+QRadioButton::indicator::unchecked::enabled{ 
+background-image: url(:/rb2/resgui/radioBtn2/radioOff.png);
+}
+
+QRadioButton::indicator::checked::disabled{ 
+background-image: url(:/rb2/resgui/radioBtn2/radioOn17_4dis.png);
+}
+
+QRadioButton::indicator::unchecked::disabled{ 
+background-image: url(:/rb2/resgui/radioBtn2/radioOn17_41disOff.png);
+}
+
+</string>
+   </property>
+   <widget class="QFrame" name="frameMain">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>1280</width>
+      <height>1020</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>17</pointsize>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>S</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#frameMain{
+	background-color: rgba(0, 2, 3, 128);
+}
+
+QFrame[accessibleDescription=&quot;VoltageLevel&quot;]{
+	border-bottom: 1px solid #AAA099;
+	border-top: 1px solid #222222;
+	border-right: 1px solid #AAA099;
+	border-left: 1px solid #444444; 
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(255,0,0,0),
+	stop:0.09 rgba(255,0,0,255),
+	stop:0.21 rgba(255,0,0,255),
+	stop:0.30 rgba(255,0,0,0),
+
+	stop:0.30 rgba(0,255,0,0),
+	stop:0.37 rgba(0,255,0,255),
+	stop:0.43 rgba(0,255,0,255),
+	stop:0.5 rgba(0,255,0,0),
+
+	stop:0.50 rgba(0,255,0,0),
+	stop:0.57 rgba(0,255,0,255),
+	stop:0.63 rgba(0,255,0,255),
+	stop:0.7 rgba(0,255,0,0)
+
+	stop:0.7 rgba(255,0,0,0),
+	stop:0.79 rgba(255,0,0,255),
+	stop:0.91 rgba(255,0,0,255),
+	stop:1.00 rgba(255,0,0,0)
+);
+}
+
+QLabel[accessibleDescription=&quot;Termo&quot;]{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(128,128,0,0),
+	stop:0.4 rgba(255,255,255,255),
+	stop:0.6 rgba(255,255,255,255),
+	stop:1.0 rgba(128,128,0,0));
+}
+
+QLabel:disabled[accessibleDescription=&quot;Termo&quot;]{
+	background-color: rgba(0,0,0,0);
+}
+
+QLabel[accessibleDescription=&quot;Lamp&quot;]{
+	background-image: url(:/InfoInd/resgui/infoind/ind_red.png);
+	background-image: url(:/InfoInd/resgui/infoind/ind_green72.png);
+}
+
+QLabel:disabled[accessibleDescription=&quot;Lamp&quot;]{
+	background-image: url(:/InfoInd/resgui/infoind/ind_gray72.png);
+/*	background-color: rgba(1, 1, 32,255);*/
+}
+
+ QFrame:disabled[accessibleDescription=&quot;VoltageLevel&quot;]{
+	border-bottom: 1px solid #AAA099; 
+	border-top: 1px solid #222222; 
+	border-right: 1px solid #AAA099; 
+	border-left: 1px solid #444444;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
+    stop:0    rgba(64,28,0,0), 
+	stop:0.06 rgba(64,28,0,255), 
+	stop:0.24 rgba(64,28,0,255), 
+	stop:0.30 rgba(64,28,0,0),
+	stop:0.30 rgba(0,64,0,0), 
+	stop:0.36 rgba(0,64,0,255), 
+	stop:0.44 rgba(0,64,0,255), 
+	stop:0.5 rgba(0,64,0,0),
+	stop:0.50 rgba(0,64,0,0), 
+	stop:0.56 rgba(0,64,0,255), 
+	stop:0.64 rgba(0,64,0,255), 
+	stop:0.7 rgba(0,64,0,0),
+	stop:0.7  rgba(64,28,0,0), 
+	stop:0.76 rgba(64,28,0,255), 
+	stop:0.94 rgba(64,28,0,255), 
+	stop:1.00 rgba(64,28,0,0));
+};
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBoxEcho">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>1170</x>
+       <y>620</y>
+       <width>100</width>
+       <height>230</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Яркость</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <widget class="QPushButton" name="pushButtonEcho">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>28</y>
+        <width>72</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>S</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>  Эхо  </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelGrigBirightness_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>81</y>
+        <width>48</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel::{	
+	background-image: none;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::HLine</enum>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="text">
+       <string>метки</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="indent">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frameBrightness_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>60</y>
+        <width>40</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+background-repeat: no-repeat;
+	/*background-position: right;*/
+	background-image: url(:/AzScales/resgui/AzimuthScales/brightn04721.png);
+}
+
+QFrame:disabled{
+	background-image: url(:/AzScales/resgui/AzimuthScales/brightn04731.png);
+	background-repeat:no-repeat;
+}
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSlider" name="sliderEchoBrightness">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>8</y>
+         <width>24</width>
+         <height>146</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider::groove:vertical {
+	border-bottom: 1px solid #AAA099;
+	border-top: 1px solid #222222;
+	border-right: 1px solid #AAA099;
+	border-left: 1px solid #444444; 
+    height: 138px;      
+	width:4px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #222018, stop:1 #000000);
+    margin: 2px 0;
+ }
+
+QSlider::groove:disabled{
+background-color: rgba(36, 41, 34,  255);
+}
+
+ QSlider::handle:vertical {	
+	background-image: url(:/slider/resgui/slider/sliderHandle022.png);
+    height: 15px;
+    width: 28px;
+	margin: -1px -9px;
+ }
+
+ QSlider::groove:hover {
+	border-bottom: 1px solid #CCBB99;
+	border-top: 1px solid #444444;
+	border-right: 1px solid #CCBB99;
+	border-left: 1px solid #555555; 
+ }
+
+QSlider::handle:vertical:disabled {
+	background-image: url(:/slider/resgui/slider/sliderHandle022disable03.png);
+ }
+
+</string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>29</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="pageStep">
+        <number>3</number>
+       </property>
+       <property name="value">
+        <number>18</number>
+       </property>
+       <property name="sliderPosition">
+        <number>18</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frameAtten_2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>57</x>
+        <y>98</y>
+        <width>35</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-repeat: no-repeat;
+	background-image: url(:/AzScales/resgui/AzimuthScales/brightn048.png);
+}
+
+QFrame:disabled{
+	background-image: url(:/AzScales/resgui/AzimuthScales/brightn0482.png);
+	background-repeat:no-repeat;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSlider" name="sliderGridBrightness">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>8</y>
+         <width>24</width>
+         <height>106</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider::groove:vertical {
+	border-bottom: 1px solid #AAA099;
+	border-top: 1px solid #222222;
+	border-right: 1px solid #AAA099;
+	border-left: 1px solid #444444; 
+    height: 102px; 
+	
+    width:4px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #222018, stop:1 #000000);
+/*    margin: 2px 0;
+margin: 0px -2px;
+padding: -1px 0px;
+margin: -12px 0px;	
+*/
+ }
+
+QSlider::groove:disabled{
+background-color: rgba(36, 41, 34,  255);
+}
+
+ QSlider::handle:vertical {	
+	background-image: url(:/slider/resgui/slider/sliderHandle022.png);
+    height: 15px;
+width: 28px;
+margin: -1px -9px;
+/*   
+
+
+margin: 0px -9px;
+ */	
+
+ }
+
+ QSlider::groove:hover {
+	border-bottom: 1px solid #CCBB99;
+	border-top: 1px solid #444444;
+	border-right: 1px solid #CCBB99;
+	border-left: 1px solid #555555; 
+
+/*    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #323028, stop:1 #121008);	
+*/
+ }
+
+QSlider::handle:vertical:disabled {	
+	background-image: url(:/slider/resgui/slider/sliderHandle022disable03.png);
+ }
+</string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>23</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="pageStep">
+        <number>3</number>
+       </property>
+       <property name="value">
+        <number>7</number>
+       </property>
+       <property name="sliderPosition">
+        <number>7</number>
+       </property>
+       <property name="tracking">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameAzScales">
+     <property name="geometry">
+      <rect>
+       <x>21</x>
+       <y>860</y>
+       <width>1130</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="labelPlusMinusAzScale">
+      <property name="geometry">
+       <rect>
+        <x>336</x>
+        <y>100</y>
+        <width>466</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resgui.qrc">:/AzScales/resgui/AzimuthScales/scale05.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="azimuthLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>515</x>
+        <y>0</y>
+        <width>102</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(0, 0, 0);
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 0px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+
+	color: rgb(0, 160, 0);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="qLabelM" name="azimuthScale3600">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>267</x>
+        <y>64</y>
+        <width>592</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(0, 0, 0);
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-top: 0px solid rgb(18, 16, 14);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>azimuthScale3600</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="qLabelM" name="azimuthScale360">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>28</y>
+        <width>1130</width>
+        <height>38</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*
+QFrame {border-image: url(:/back/backapp/resgui/background/backicoBlack.png) 4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent;
+}
+*/
+QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 7px;
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>azimuthScale360</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <zorder>labelPlusMinusAzScale</zorder>
+     <zorder>azimuthScale360</zorder>
+     <zorder>azimuthScale3600</zorder>
+     <zorder>azimuthLabel</zorder>
+    </widget>
+    <widget class="QFrame" name="frame">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>1006</x>
+       <y>370</y>
+       <width>159</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="elevAngleLabel">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>225</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(0, 0, 0);
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 0px solid rgb(148, 141, 118);
+
+	color: rgb(0, 160, 0);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="qLabelM" name="elevationScale87">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>79</x>
+        <y>0</y>
+        <width>37</width>
+        <height>480</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*
+QFrame {border-image: url(:/back/backapp/resgui/background/backicoBlack.png) 4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent;
+}
+*/
+QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 7px;
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>el87</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="qLabelM" name="elevationScale870">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>114</x>
+        <y>40</y>
+        <width>37</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*
+QFrame {border-image: url(:/back/backapp/resgui/background/backicoBlack.png) 4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent;
+}
+*/
+QFrame {
+	background-color: rgb(0, 0, 0);
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 0px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>el870</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <zorder>elevationScale87</zorder>
+     <zorder>elevationScale870</zorder>
+     <zorder>elevAngleLabel</zorder>
+    </widget>
+    <widget class="qLabelM" name="IKO">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>15</y>
+       <width>840</width>
+       <height>840</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*QFrame {
+border-image: url(:/back/backapp/resgui/background/backicoBlack.png) 10 10 10 10;
+border-top: 10px transparent;
+border-bottom: 10px transparent;
+border-left: 10px transparent;
+border-right: 10px transparent; 
+}
+*/
+
+QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 9px;
+	border-top: 3px solid rgb(32, 28, 20);
+	border-left: 3px solid rgb(36, 32,  24);
+	border-bottom: 3px solid rgb(160, 152, 128);
+	border-right: 3px solid rgb(148, 141, 118);
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxMashtabD">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>1060</x>
+       <y>250</y>
+       <width>140</width>
+       <height>90</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:vertical {
+	border-bottom: 1px solid #AAA099;
+	border-top: 1px solid #222222;
+	border-right: 1px solid #AAA099;
+	border-left: 1px solid #444444; 
+    height: 68px;      
+	width:4px;
+/*
+background-image: url(:/slider/basic/resgui/slider/sliderHandle022.png);
+background-repeat:no-repeat;
+margin: -9px  -1px  -9px  -1px;
+*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #222018, stop:1 #000000);
+
+    margin: 2px 0;
+ }
+
+ QSlider::handle:vertical {
+	background-image: url(:/slider/basic/resgui/slider/sliderHandle022.png);
+	background-image: url(:/slider/resgui/slider/sliderHandle022.png);
+	background-repeat:no-repeat;
+    height: 15px;
+    width: 28px;
+	margin: -1px -9px;
+ }
+
+ QSlider::handle:vertical:disabled {
+	background-image: url(:/slider/basic/resgui/slider/sliderHandle022disable03.png);
+	background-image: url(:/slider/resgui/slider/sliderHandle022disable03.png);
+ }
+
+ QSlider::groove:hover {
+	border-bottom: 1px solid #CCBB99;
+	border-top: 1px solid #444444;
+	border-right: 1px solid #CCBB99;
+	border-left: 1px solid #555555; 
+
+/*    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #323028, stop:1 #121008);	
+*/
+ }
+
+QSlider::groove:disabled{
+/*	background-color: rgba(68, 64, 60, 255);
+background-color: rgba(60, 52, 48,  255);
+*/	
+background-color: rgba(36, 41, 34,  255);
+}
+</string>
+     </property>
+     <property name="title">
+      <string>Масштаб Д, км</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <widget class="QFrame" name="frameZoom">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>29</y>
+        <width>120</width>
+        <height>54</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+/*	background-image: url(:/AzScales/resgui/AzimuthScales/zoom0542.png);
+*/	background-image: url(:/AzScales/resgui/AzimuthScales/zoom0614.png);
+	background-repeat:no-repeat;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzScales/resgui/AzimuthScales/zoom0542dis.png);
+	background-repeat:no-repeat;
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sliderZoom">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>40</y>
+        <width>130</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:horizontal {
+	border-bottom: 1px solid #AAA099;
+	border-top: 1px solid #222222;
+	border-right: 1px solid #AAA099;
+	border-left: 1px solid #444444; 
+/*    width: 100px;      
+*/    width: 110px;      
+	height: 4px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #222018, stop:1 #000000);
+    margin: 0 2px;
+ }
+
+ QSlider::handle:horizontal {	
+	background-image: url(:/slider/resgui/slider/sliderHandleHoriz022.png);
+    height: 28px;
+    width: 15px;
+	margin: -9px  -1px  -9px  -1px;
+ }
+
+ QSlider::handle:horizontal:disabled {
+	background-image: url(:/slider/basic/resgui/slider/sliderHandle022Horzdisable03.png);
+    background-image: url(:/slider/resgui/slider/sliderHandleHoriz022.png);
+ }
+
+
+ QSlider::groove:hover {
+	border-bottom: 1px solid #CCBB99;
+	border-top: 1px solid #444444;
+	border-right: 1px solid #CCBB99;
+	border-left: 1px solid #555555; 
+ }
+
+QSlider::groove:disabled{
+	background-color: rgba(68, 64, 60, 255);
+}
+
+/*
+QSlider {border-image: url(:/background/basic/resgui/background/trnsprnt.png);
+background-color: rgb(57,56,51);
+}
+QSlider::groove:horizontal {border-image: url(:/slider/basic/resgui/slider/grooveG.png) ;
+height:12px;
+} 
+QSlider::groove:horizontal:hover {border-image: url(:/slider/basic/resgui/slider/grooveGh.png) ;
+height:12px;
+} 
+QSlider::handle:horizontal {
+	border-image: url(:/slider/basic/resgui/slider/handleG.png) ;
+	width: 9px;
+    margin: 2px 0 ;
+}
+QSlider::handle:horizontal:hover {
+	border-image: url(:/slider/basic/resgui/slider/handle_mouseG.png);
+	width: 9px;
+    margin: 2px 0 ;
+}
+QSlider::handle:horizontal:disabled {
+	border-image: url(:/slider/basic/resgui/slider/handle_disableG.png);
+	width: 9px;
+    margin: 2px 0 ;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+</string>
+      </property>
+      <property name="maximum">
+       <number>6</number>
+      </property>
+      <property name="singleStep">
+       <number>1</number>
+      </property>
+      <property name="pageStep">
+       <number>1</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+      <property name="sliderPosition">
+       <number>1</number>
+      </property>
+      <property name="tracking">
+       <bool>true</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksBothSides</enum>
+      </property>
+      <property name="tickInterval">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frameZoomH">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>91</y>
+        <width>132</width>
+        <height>103</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QFrame{
+	background-image: url(:/AzScales/resgui/AzimuthScales/zoom_H_023.png);
+    background-position: bottom right;
+	background-repeat:no-repeat;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzScales/resgui/AzimuthScales/zoom_H_0231.png);
+	background-repeat:no-repeat;
+}
+
+
+/*
+QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_023.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_0231.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+*/
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="labelZoomH">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1</y>
+         <width>120</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>8</pointsize>
+         <underline>false</underline>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::HLine</enum>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="text">
+        <string>___Масштаб высоты___</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="indent">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frameZoomH1">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>20</y>
+         <width>33</width>
+         <height>92</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QSlider" name="sliderZoomH1">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>6</y>
+          <width>24</width>
+          <height>72</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_023.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_0231.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="sliderPosition">
+         <number>1</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="invertedControls">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frameZoomH2">
+       <property name="geometry">
+        <rect>
+         <x>36</x>
+         <y>20</y>
+         <width>33</width>
+         <height>92</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QSlider" name="sliderZoomH2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>6</y>
+          <width>24</width>
+          <height>72</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="sliderPosition">
+         <number>1</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="invertedControls">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frameZoomH3">
+       <property name="geometry">
+        <rect>
+         <x>67</x>
+         <y>20</y>
+         <width>33</width>
+         <height>92</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QSlider" name="sliderZoomH3">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>6</y>
+          <width>24</width>
+          <height>72</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="sliderPosition">
+         <number>1</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="invertedControls">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QFrame" name="frameZoomH4">
+       <property name="geometry">
+        <rect>
+         <x>98</x>
+         <y>20</y>
+         <width>33</width>
+         <height>92</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QSlider" name="sliderZoomH4">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>6</y>
+          <width>24</width>
+          <height>72</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024.png);
+	background-repeat:no-repeat no-repeat;
+    background-position: bottom right;
+}
+
+QFrame:disabled{
+	background-image: url(:/AzimuthScales/resgui/AzimuthScales/zoom_H_024dis.png);
+	background-repeat:no-repeat;
+}
+
+QLabel{
+	background-image: url(:none);
+}
+
+QLabel:disabled{
+	background-image: url(:none);
+}
+</string>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>3</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+        <property name="sliderPosition">
+         <number>1</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="invertedControls">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxRejRabotiZRK">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>140</width>
+       <height>180</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Режим работы ЗРК</string>
+     </property>
+     <widget class="QFrame" name="frameRejimRabotiZRK">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>33</y>
+        <width>106</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+       </font>
+      </property>
+      <property name="accessibleDescription">
+       <string>RadioGroup</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">.QFrame{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.09 rgba(0,0,0,0),
+	stop:0.1 rgba(0,0,0,255),
+	stop:0.9 rgba(0,0,0,255),
+	stop:0.91 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButtonRejimRabotiFK">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>33</y>
+         <width>106</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/*
+QPushButton[accessibleDescription=&quot;RBLeft3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(160, 128, 92, 255), 
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(160, 128, 92, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-left-radius:7px; 
+   	border-bottom-left-radius:7px;
+}
+
+
+QPushButton:pressed[accessibleDescription=&quot;RBLeft3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBLeft3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+}
+QPushButton:disabled[accessibleDescription=&quot;RBLeft3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string>      ФК     </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonRejimRabotiBR">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>106</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>400</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-position: 10px, 10px;
+/*
+QPushButton[accessibleDescription=&quot;RBRight3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(96, 88, 80, 255), 
+stop:0.3 rgba(60, 48, 32, 255), 
+stop:0.8 rgba(60, 48, 32, 255), 
+stop:1 rgba(96, 88, 80, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-right-radius:7px; 
+   	border-bottom-right-radius:7px; 
+}
+
+QPushButton:checked[accessibleDescription=&quot;RBRight3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(60, 40, 28, 255), 
+stop:0.15 rgba(104, 80, 60, 255), 
+
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(128, 96, 64, 255));		
+
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+ 
+}
+
+QPushButton:pressed[accessibleDescription=&quot;RBRight3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBRight3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+  	
+}
+QPushButton:disabled[accessibleDescription=&quot;RBRight3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string>      БР     </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonRejimRabotiTren">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>66</y>
+         <width>106</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/*
+QPushButton[accessibleDescription=&quot;RBLeft3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(160, 128, 92, 255), 
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(160, 128, 92, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-left-radius:7px; 
+   	border-bottom-left-radius:7px;
+}
+
+
+QPushButton:pressed[accessibleDescription=&quot;RBLeft3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBLeft3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+}
+QPushButton:disabled[accessibleDescription=&quot;RBLeft3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string> Тренаж</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonRejimRabotiRR">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>99</y>
+         <width>106</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>B</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/*
+QPushButton[accessibleDescription=&quot;RBLeft3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(160, 128, 92, 255), 
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(160, 128, 92, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-left-radius:7px; 
+   	border-bottom-left-radius:7px;
+}
+
+
+QPushButton:pressed[accessibleDescription=&quot;RBLeft3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBLeft3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+}
+QPushButton:disabled[accessibleDescription=&quot;RBLeft3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string>      РР      </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxDateTime">
+     <property name="geometry">
+      <rect>
+       <x>1010</x>
+       <y>160</y>
+       <width>260</width>
+       <height>72</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Дата, время</string>
+     </property>
+     <widget class="QLabel" name="qLabelDate">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>28</y>
+        <width>112</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 7px;
+	
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+
+	color: rgb(0, 128, 0);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>2015.04.09</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qLabelTime">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>26</y>
+        <width>118</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 7px;
+	
+	border-top: 2px solid rgb(32, 28, 20);
+	border-left: 2px solid rgb(36, 32,  24);
+	border-bottom: 2px solid rgb(160, 152, 128);
+	border-right: 2px solid rgb(148, 141, 118);
+
+	color: rgb(0, 128, 0);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>22:22:22</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxLanguage">
+     <property name="geometry">
+      <rect>
+       <x>1052</x>
+       <y>10</y>
+       <width>168</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Language - ቋንቋ - Язык</string>
+     </property>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>27</x>
+        <y>32</y>
+        <width>110</width>
+        <height>96</height>
+       </rect>
+      </property>
+      <property name="accessibleDescription">
+       <string>Zapusk</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame[accessibleDescription=&quot;Zapusk&quot;]{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.25 rgba(0,0,0,0),
+	stop:0.26 rgba(0,0,0,255),
+	stop:0.39 rgba(0,0,0,255),
+	stop:0.4 rgba(0,0,0,0),
+	stop:0.6 rgba(0,0,0,0),
+	stop:0.61 rgba(0,0,0,255),
+	stop:0.74 rgba(0,0,0,255),
+	stop:0.75 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+
+/*
+QPushButton[accessibleDescription=&quot;400&quot;]{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+QPushButton[accessibleDescription=&quot;Ext&quot;]{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+*/
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButtonEnglish">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>400</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-position: 10px, 10px;</string>
+       </property>
+       <property name="text">
+        <string>   English     </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonPortug">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>31</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>   አማርኛ    </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+         <disabledoff>:/rb2/resgui/radioBtn2/radioOff.png</disabledoff>
+         <disabledon>:/rb2/resgui/radioBtn2/radioOn.png</disabledon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonRussian">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>62</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>Ext</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>   Русский   </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+         <activeoff>:/rb2/resgui/radioBtn2/radioOff.png</activeoff>
+         <selectedoff>:/rb2/resgui/radioBtn2/radioOff.png</selectedoff>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxRejRabotiZRK_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>140</width>
+       <height>110</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Режим управ. ЗРК</string>
+     </property>
+     <widget class="QFrame" name="frameRejimRabotiZRK_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>28</y>
+        <width>120</width>
+        <height>68</height>
+       </rect>
+      </property>
+      <property name="accessibleDescription">
+       <string>RadioGroup</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">.QFrame{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.09 rgba(0,0,0,0),
+	stop:0.1 rgba(0,0,0,255),
+	stop:0.9 rgba(0,0,0,255),
+	stop:0.91 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButtonZRK_RemoteControl">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>120</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>400</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-position: 10px, 10px;
+/*
+QPushButton[accessibleDescription=&quot;RBRight3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(96, 88, 80, 255), 
+stop:0.3 rgba(60, 48, 32, 255), 
+stop:0.8 rgba(60, 48, 32, 255), 
+stop:1 rgba(96, 88, 80, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-right-radius:7px; 
+   	border-bottom-right-radius:7px; 
+}
+
+QPushButton:checked[accessibleDescription=&quot;RBRight3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(60, 40, 28, 255), 
+stop:0.15 rgba(104, 80, 60, 255), 
+
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(128, 96, 64, 255));		
+
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+ 
+}
+
+QPushButton:pressed[accessibleDescription=&quot;RBRight3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBRight3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+  	
+}
+QPushButton:disabled[accessibleDescription=&quot;RBRight3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string> Централ.(КП) </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonZRK_LocalControl">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>34</y>
+         <width>120</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>B</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/*
+QPushButton[accessibleDescription=&quot;RBLeft3&quot;]{
+
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(160, 128, 92, 255), 
+stop:0.3 rgba(80, 60, 40, 255), 
+stop:0.8 rgba(80, 60, 40, 255), 
+stop:1 rgba(160, 128, 92, 255));		
+    
+	padding-right: 1px;
+    padding-bottom: 1px;
+    
+	border-style: solid;
+	border-width: 1px;
+	border-left-color: white;
+	border-top-color: white;	
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+	
+    border-top-left-radius:7px; 
+   	border-bottom-left-radius:7px;
+}
+
+
+QPushButton:pressed[accessibleDescription=&quot;RBLeft3&quot;]{
+	padding-right: 0px;
+    padding-bottom: 0px;
+
+	border-width: 1px;
+	border-left-color: black;
+	border-top-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+QPushButton:hover[accessibleDescription=&quot;RBLeft3&quot;]{   	
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, 
+	stop:0 rgba(96, 76, 48, 255), 
+	stop:1 rgba(176, 144, 112, 255));
+}
+QPushButton:disabled[accessibleDescription=&quot;RBLeft3&quot;]{
+color:#888888; 
+}
+*/
+</string>
+       </property>
+       <property name="text">
+        <string>  Автономный </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxSimuliators">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>550</y>
+       <width>140</width>
+       <height>110</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Имитаторы</string>
+     </property>
+     <widget class="QPushButton" name="pushButtonSimulatorKP">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>100</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu Condensed</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>S</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string> Возд.целей </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonSimulatorServoDrive">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>66</y>
+        <width>100</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu Condensed</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>S</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>  Сервоприв.</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxScanSector">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>664</y>
+       <width>120</width>
+       <height>190</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Режим поиска</string>
+     </property>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>23</x>
+        <y>30</y>
+        <width>75</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="accessibleDescription">
+       <string>RejimPoiska</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame[accessibleDescription=&quot;RejimPoiska&quot;]{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.2 rgba(0,0,0,0),
+	stop:0.21 rgba(0,0,0,255),
+	stop:0.29 rgba(0,0,0,255),
+	stop:0.30 rgba(0,0,0,0),
+	stop:0.45 rgba(0,0,0,0),
+	stop:0.46 rgba(0,0,0,255),
+	stop:0.54 rgba(0,0,0,255),
+	stop:0.55 rgba(0,0,0,0),
+	stop:0.70 rgba(0,0,0,0),
+	stop:0.71 rgba(0,0,0,255),
+	stop:0.79 rgba(0,0,0,255),
+	stop:0.80 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+QFrame[accessibleDescription=&quot;Zapusk&quot;]{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.25 rgba(0,0,0,0),
+	stop:0.26 rgba(0,0,0,255),
+	stop:0.39 rgba(0,0,0,255),
+	stop:0.4 rgba(0,0,0,0),
+	stop:0.6 rgba(0,0,0,0),
+	stop:0.61 rgba(0,0,0,255),
+	stop:0.74 rgba(0,0,0,255),
+	stop:0.75 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+
+
+
+
+/*
+QPushButton[accessibleDescription=&quot;400&quot;]{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+QPushButton[accessibleDescription=&quot;Ext&quot;]{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+*/
+
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButtonKrygSP">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>75</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>400</string>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-position: 10px, 10px;</string>
+       </property>
+       <property name="text">
+        <string>   Круг. </string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/rb2/resgui/radioBtn2/radio17_2.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+         <disabledoff>:/rb2/resgui/radioBtn2/radioOff.png</disabledoff>
+         <activeoff>:/rb2/resgui/radioBtn2/radioOff.png</activeoff>:/rb2/resgui/radioBtn2/radio17_2.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonBSP">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>75</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>  БСП </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonServoDrive_Off">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>75</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Выкл.</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonMSP">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>60</y>
+         <width>75</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>M</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string> МСП </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonZhvt">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>118</y>
+         <width>75</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="accessibleDescription">
+        <string>Ext</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string> Захват </string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+         <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+         <disabledoff>:/rb2/resgui/radioBtn2/radioOff.png</disabledoff>
+         <disabledon>:/rb2/resgui/radioBtn2/radioOn.png</disabledon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>17</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxP18">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>140</width>
+       <height>220</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>СРЦ</string>
+     </property>
+     <widget class="QPushButton" name="pushButtonUseP18">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>104</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu Condensed</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>S</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string> Подключить</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_P18">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>124</x>
+        <y>40</y>
+        <width>5</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>1</pointsize>
+       </font>
+      </property>
+      <property name="accessibleDescription">
+       <string>Lamp</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="indent">
+       <number>-1</number>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxShowP18">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>120</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="accessibleDescription">
+       <string>G</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>Отображение</string>
+      </property>
+      <widget class="QLabel" name="labelPlotNumber">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>25</y>
+         <width>50</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Кол. отм. в трассе</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dblSpnBxPlotNumber">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>30</y>
+         <width>50</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="keyboardTracking">
+        <bool>true</bool>
+       </property>
+       <property name="prefix">
+        <string/>
+       </property>
+       <property name="suffix">
+        <string/>
+       </property>
+       <property name="decimals">
+        <number>0</number>
+       </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>10.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="dblSpnBxAge">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>70</y>
+         <width>50</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+       <property name="keyboardTracking">
+        <bool>true</bool>
+       </property>
+       <property name="prefix">
+        <string/>
+       </property>
+       <property name="suffix">
+        <string> с</string>
+       </property>
+       <property name="decimals">
+        <number>0</number>
+       </property>
+       <property name="minimum">
+        <double>10.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>600.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>60.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelAge">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>65</y>
+         <width>60</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Срок отобр. без обн.</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonShowPlots">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>110</y>
+         <width>80</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="accessibleDescription">
+        <string>S</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string> Отметки</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resgui.qrc">
+         <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+         <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+         <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+         <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>17</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frameWindowTitle">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QFrame{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+stop:0 rgba(96, 88, 80, 255), stop:1                   rgba(0, 0, 0, 255));}
+
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="labelWindowTitle">
+     <property name="geometry">
+      <rect>
+       <x>44</x>
+       <y>1</y>
+       <width>654</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Автоматизированное рабочее место командира</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buttonClose">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>2</y>
+       <width>24</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="accessibleDescription">
+      <string>E</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 7px;
+border: 0px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resgui.qrc">
+       <normaloff>:/Icons/resgui/Icons/exit24.png</normaloff>:/Icons/resgui/Icons/exit24.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFullScreen">
+     <property name="geometry">
+      <rect>
+       <x>1256</x>
+       <y>3</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelTargetCharacteristics">
+    <property name="geometry">
+     <rect>
+      <x>1280</x>
+      <y>30</y>
+      <width>680</width>
+      <height>240</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>FreeMono</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-bottom: 1px solid rgb(160, 152, 128);
+border-right: 1px solid rgb(148, 141, 118);
+background-color: rgb(26, 24, 22);
+padding-top: -15px;
+padding-left: 5px;</string>
+    </property>
+    <property name="text">
+     <string>labelTargetCharacteristics</string>
+    </property>
+   </widget>
+   <widget class="qLabelM" name="indicatorRV">
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>700</y>
+      <width>160</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*QFrame {
+border-image: url(:/back/backapp/resgui/background/backicoBlack.png) 10 10 10 10;
+border-top: 10px transparent;
+border-bottom: 10px transparent;
+border-left: 10px transparent;
+border-right: 10px transparent; 
+}
+*/
+
+QFrame {
+	background-color: rgb(0, 0, 0);
+	border-radius: 9px;
+	border-top: 3px solid rgb(32, 28, 20);
+	border-left: 3px solid rgb(36, 32,  24);
+	border-bottom: 3px solid rgb(160, 152, 128);
+	border-right: 3px solid rgb(148, 141, 118);
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelIronButtons">
+    <property name="geometry">
+     <rect>
+      <x>1360</x>
+      <y>520</y>
+      <width>540</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>FreeMono</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-bottom: 1px solid rgb(160, 152, 128);
+border-right: 1px solid rgb(148, 141, 118);
+background-color: rgb(26, 24, 22);
+padding-top: -15px;
+padding-left: 5px;</string>
+    </property>
+    <property name="text">
+     <string>labelIronButtons</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelParser">
+    <property name="geometry">
+     <rect>
+      <x>1820</x>
+      <y>880</y>
+      <width>81</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-bottom: 1px solid rgb(160, 152, 128);
+border-right: 1px solid rgb(148, 141, 118);
+background-color: rgb(26, 24, 22);
+padding-top: -15px;
+padding-left: 5px;</string>
+    </property>
+    <property name="text">
+     <string>labelParser</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCY">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1810</x>
+      <y>830</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="accessibleDescription">
+     <string>S</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+	background-repeat: no-repeat;
+	background-position: right; 
+	background-image: url(:/b_ind2/resgui/b_ind2/buttonIndGray023.png);
+	padding-right: 4px;
+}
+
+/*
+background-repeat: no-repeat;
+
+
+background-position: 100% 50%; 
+background-position: 30% 30%;
+background-position: 20% 50%; 
+background-position: 20% 30%; 
+
+background-position: 50px 100px; 
+*/
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Отработать ЦУ</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelMouseMoveIndicatorEB">
+    <property name="geometry">
+     <rect>
+      <x>1740</x>
+      <y>740</y>
+      <width>171</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel::{	
+	background-image: none;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::HLine</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string>labelMouseMoveIndicatorEB</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelSharedMemory">
+    <property name="geometry">
+     <rect>
+      <x>1650</x>
+      <y>760</y>
+      <width>261</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel::{	
+	background-image: none;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::HLine</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string>labelSharedMemory</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxCY">
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>780</y>
+      <width>230</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Целеуказание СНР</string>
+    </property>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>29</y>
+       <width>203</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="accessibleDescription">
+      <string>RadioGroup</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonVneshneeCY">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="accessibleDescription">
+       <string>L</string>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Внешнее</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+        <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+        <disabledoff>:/rb2/resgui/radioBtn2/radioOn17_41disOff.png</disabledoff>
+        <disabledon>:/rb2/resgui/radioBtn2/radioOn17_41dis.png</disabledon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>17</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonMestnoeCY">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>102</x>
+        <y>0</y>
+        <width>98</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="accessibleDescription">
+       <string>R</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Местное</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/rb2/resgui/radioBtn2/radioOff.png</normaloff>
+        <normalon>:/rb2/resgui/radioBtn2/radioOn.png</normalon>
+        <disabledoff>:/rb2/resgui/radioBtn2/radioOn17_41disOff.png</disabledoff>
+        <disabledon>:/rb2/resgui/radioBtn2/radioOn17_41dis.png</disabledon>:/rb2/resgui/radioBtn2/radioOff.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>17</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelNextTochka">
+    <property name="geometry">
+     <rect>
+      <x>1280</x>
+      <y>700</y>
+      <width>240</width>
+      <height>320</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>FreeMono</family>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-bottom: 1px solid rgb(160, 152, 128);
+border-right: 1px solid rgb(148, 141, 118);
+background-color: rgb(26, 24, 22);
+padding-top: -15px;
+padding-left: 5px;</string>
+    </property>
+    <property name="text">
+     <string>labelNextTochka</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxMetki">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1165</x>
+      <y>450</y>
+      <width>108</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Метки</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QFrame" name="frameMetki">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>30</y>
+       <width>92</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QFrame{
+   border: 0px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, 
+	stop:0 rgba(0,0,0,0),
+	stop:0.1 rgba(0,0,0,0),
+	stop:0.11 rgba(0,0,0,255),
+	stop:0.89 rgba(0,0,0,255),
+	stop:0.9 rgba(0,0,0,0),
+	stop:1 rgba(0,0,0,0));
+}
+
+/*
+QPushButton:checked, QPushButton:pressed{
+    padding-top: 10px;
+}
+*/
+
+/*
+QPushButton[accessibleDescription=&quot;T&quot;]{
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;	
+	border-bottom-color: rgb(48, 44, 32);
+}
+
+QPushButton[accessibleDescription=&quot;M&quot;]{
+	border-bottom-color: rgb(48, 44, 32);
+}
+
+QPushButton[accessibleDescription=&quot;B&quot;]{
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+*/
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonGridAz">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>92</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>T</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Азимут  </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonGridR">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>28</y>
+        <width>92</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>M</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string> Дальн.  </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonFormular">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>56</y>
+        <width>92</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>M</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>  Форм.  </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonZoom">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>85</y>
+        <width>92</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="accessibleDescription">
+       <string>B</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>   Лупа    </string>
+      </property>
+      <property name="icon">
+       <iconset resource="resgui.qrc">
+        <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+        <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+        <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+        <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>17</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxRazrPyska_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1530</x>
+      <y>970</y>
+      <width>120</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>ЦУ от ВКП</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonShowTrack_3">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>30</y>
+       <width>90</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="accessibleDescription">
+      <string>S</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*QPushButton:toolTip{
+	background-color: rgb(170, 0, 255);
+color: rgb(210,210,210);
+}
+
+
+QPushButton{
+color: rgb(210,210,210);
+}
+
+QPushButton{border-image: url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover{
+	border-image:url(:/button/basic/resgui/b_basic/b_active_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:unchecked{
+	border-image:url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:disabled{
+	border-image:url(:/button/basic/resgui/b_basic/b_noactive.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}</string>
+     </property>
+     <property name="text">
+      <string>Принять ЦУ</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxRazrPyska">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1680</x>
+      <y>970</y>
+      <width>137</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Разрешение пуска</string>
+    </property>
+    <widget class="QPushButton" name="pushButtonPyskRazreshen">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>120</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="accessibleDescription">
+      <string>S</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*QPushButton:toolTip{
+	background-color: rgb(170, 0, 255);
+color: rgb(210,210,210);
+}
+
+
+QPushButton{
+color: rgb(210,210,210);
+}
+
+QPushButton{border-image: url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover{
+	border-image:url(:/button/basic/resgui/b_basic/b_active_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:unchecked{
+	border-image:url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:disabled{
+	border-image:url(:/button/basic/resgui/b_basic/b_noactive.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}</string>
+     </property>
+     <property name="text">
+      <string>Пуск разрешен</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resgui.qrc">
+       <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+       <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+       <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+       <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxTrackAge">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1290</x>
+      <y>640</y>
+      <width>51</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Т отобр.</string>
+    </property>
+    <widget class="QGroupBox" name="groupBoxSet6_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>50</y>
+       <width>80</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="accessibleDescription">
+      <string>G</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string> 6  Tнак.</string>
+     </property>
+     <widget class="QDoubleSpinBox" name="dblSpnBxTnakopl_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>22</y>
+        <width>60</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="prefix">
+       <string/>
+      </property>
+      <property name="suffix">
+       <string> мс</string>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="minimum">
+       <double>0.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>15.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelPorog_2">
+    <property name="geometry">
+     <rect>
+      <x>1550</x>
+      <y>860</y>
+      <width>231</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel::{	
+	background-image: none;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::HLine</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string>labelPorog_2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelPorog">
+    <property name="geometry">
+     <rect>
+      <x>1550</x>
+      <y>890</y>
+      <width>251</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel::{	
+	background-image: none;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::HLine</enum>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string>labelPorog</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonShowTarget">
+    <property name="geometry">
+     <rect>
+      <x>1540</x>
+      <y>910</y>
+      <width>154</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="accessibleDescription">
+     <string>S</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*QPushButton:toolTip{
+	background-color: rgb(170, 0, 255);
+color: rgb(210,210,210);
+}
+
+
+QPushButton{
+color: rgb(210,210,210);
+}
+
+QPushButton{border-image: url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover{
+	border-image:url(:/button/basic/resgui/b_basic/b_active_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:unchecked{
+	border-image:url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:disabled{
+	border-image:url(:/button/basic/resgui/b_basic/b_noactive.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}</string>
+    </property>
+    <property name="text">
+     <string>  Отобр.ист.полож.целей</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resgui.qrc">
+      <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+      <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+      <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+      <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonShowTrack">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1540</x>
+      <y>940</y>
+      <width>154</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="accessibleDescription">
+     <string>S</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*QPushButton:toolTip{
+	background-color: rgb(170, 0, 255);
+color: rgb(210,210,210);
+}
+
+
+QPushButton{
+color: rgb(210,210,210);
+}
+
+QPushButton{border-image: url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover{
+	border-image:url(:/button/basic/resgui/b_basic/b_active_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:unchecked{
+	border-image:url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:disabled{
+	border-image:url(:/button/basic/resgui/b_basic/b_noactive.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}</string>
+    </property>
+    <property name="text">
+     <string>  Отобр.ист.трассы целей </string>
+    </property>
+    <property name="icon">
+     <iconset resource="resgui.qrc">
+      <normaloff>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</normaloff>
+      <normalon>:/chb2/resgui/checkBtn2/checkBox16SmallChecked.png</normalon>
+      <disabledoff>:/chb2/resgui/checkBtn2/checkBox16SmallUnCheckedDis.png</disabledoff>
+      <disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallCheckedDis.png</disabledon>:/chb2/resgui/checkBtn2/checkBox16SmallUnChecked.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>17</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxSet8_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1290</x>
+      <y>280</y>
+      <width>260</width>
+      <height>140</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="accessibleDescription">
+     <string>G</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>Ориентирование УНВ по буссоли</string>
+    </property>
+    <widget class="QLabel" name="labelAge_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>20</y>
+       <width>77</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu Condensed</family>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Грубая шкала      0...60 делений</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelAge_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>85</x>
+       <y>20</y>
+       <width>80</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu Condensed</family>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Точная шкала      0...100 делений</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dblSpnBxTochnayShkala">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>60</y>
+       <width>60</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="wrapping">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="prefix">
+      <string/>
+     </property>
+     <property name="suffix">
+      <string/>
+     </property>
+     <property name="decimals">
+      <number>0</number>
+     </property>
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>99.000000000000000</double>
+     </property>
+     <property name="singleStep">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>0.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowTrack_4">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>95</y>
+       <width>100</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="accessibleDescription">
+      <string>S</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/*QPushButton:toolTip{
+	background-color: rgb(170, 0, 255);
+color: rgb(210,210,210);
+}
+
+
+QPushButton{
+color: rgb(210,210,210);
+}
+
+QPushButton{border-image: url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover{
+	border-image:url(:/button/basic/resgui/b_basic/b_active_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:pressed{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:unchecked{
+	border-image:url(:/button/basic/resgui/b_basic/b_active.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:hover:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed_mouse.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:checked{
+	border-image:url(:/button/basic/resgui/b_basic/b_pressed.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}
+QPushButton:disabled{
+	border-image:url(:/button/basic/resgui/b_basic/b_noactive.png)4 4 4 4;
+border-top: 4px transparent;
+border-bottom: 4px transparent;
+border-left: 4px transparent;
+border-right: 4px transparent; 
+}</string>
+     </property>
+     <property name="text">
+      <string>Применить</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>17</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dblSpnBxAzimuthCorrection">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>60</y>
+       <width>80</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="prefix">
+      <string/>
+     </property>
+     <property name="suffix">
+      <string> °</string>
+     </property>
+     <property name="decimals">
+      <number>2</number>
+     </property>
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>360.000000000000000</double>
+     </property>
+     <property name="singleStep">
+      <double>0.010000000000000</double>
+     </property>
+     <property name="value">
+      <double>0.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelAge_4">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>30</y>
+       <width>40</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Ubuntu Condensed</family>
+       <pointsize>10</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>0...360 °</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dblSpnBxGrybayShkala">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>60</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="wrapping">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="prefix">
+      <string/>
+     </property>
+     <property name="suffix">
+      <string/>
+     </property>
+     <property name="decimals">
+      <number>0</number>
+     </property>
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>59.000000000000000</double>
+     </property>
+     <property name="singleStep">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>0.000000000000000</double>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>qLabelM</class>
+   <extends>QLabel</extends>
+   <header location="global">qlabelm.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resgui.qrc"/>
+ </resources>
+ <connections/>
+</ui>
